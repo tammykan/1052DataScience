@@ -27,7 +27,7 @@ while(i < length(args))
 }
 
 # remove file name from extension
-iuput <- sub('\\.csv$', '', i_f)
+input <- sub('\\.csv$', '', i_f)
 
 # read input data
 data <- read.table(i_f, header = TRUE, sep = ",")
@@ -37,7 +37,7 @@ max_weight <- max(data[,2])
 max_height <- max(data[,3])
 
 # two bits factor
-result <- data.frame(set = iuput, weight = round(max_weight, 2), height = round(max_height, 2))
+result <- data.frame(set = input, weight = round(max_weight, 2), height = round(max_height, 2))
 
 # output data
 write.csv(result, file = o_f, row.names = FALSE)
